@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-kgryte",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "ESLint shareable config.",
   "author": {
     "name": "Athan Reines",
