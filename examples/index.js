@@ -8,4 +8,4 @@ merge( config.rules, {
 	'semi': [ 2, 'never' ]
 });
 
-console.log( config );
+console.dir( config );

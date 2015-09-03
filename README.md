@@ -49,7 +49,7 @@ var config = require( 'eslint-config-kgryte' );
 [ESLint](http://eslint.org/) shareable [config](http://eslint.org/docs/developer-guide/shareable-configs).
 
 ``` javascript
-console.log( config );
+console.dir( config );
 /*
 	{
 		'env': {...},
@@ -71,7 +71,7 @@ merge( config.rules, {
 	'semi': [ 2, 'never' ]
 });
 
-console.log( config );
+console.dir( config );
 ```
 
 To run the example code from the top-level application directory,
