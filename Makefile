@@ -36,13 +36,6 @@ ISTANBUL_LCOV_INFO_PATH ?= $(ISTANBUL_OUT)/lcov.info
 ISTANBUL_HTML_REPORT_PATH ?= $(ISTANBUL_OUT)/lcov-report/index.html
 
 
-# JSHINT #
-
-JSHINT ?= ./node_modules/.bin/jshint
-JSHINT_REPORTER ?= ./node_modules/jshint-stylish
-
-
-
 # FILES #
 
 # Source files:
@@ -108,18 +101,6 @@ view-cov: view-istanbul-report
 
 view-istanbul-report:
 	$(OPEN) $(ISTANBUL_HTML_REPORT_PATH)
-
-
-# LINT #
-
-.PHONY: lint lint-jshint
-
-lint: lint-jshint
-
-lint-jshint: node_modules
-	$(JSHINT) \
-		--reporter $(JSHINT_REPORTER) \
-		./
 
 
 # NODE #

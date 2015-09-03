@@ -2,7 +2,7 @@ ESLint Config
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> [ESLint](http://eslint.org/) config.
+> [ESLint](http://eslint.org/) shareable [config](http://eslint.org/docs/developer-guide/shareable-configs).
 
 
 ## Installation
@@ -14,18 +14,48 @@ $ npm install eslint-config-kgryte
 
 ## Usage
 
+### Config
+
+To extend the configuration in an `.eslintrc` file,
+
+``` javascript
+{
+	'extends': 'kgryte'
+}
+```
+
+where `kgryte` is a shorthand for `eslint-config-kgryte`. To override configuration settings, add them directly to the `.eslintrc` file.
+
+``` javascript
+{
+	'extends': 'kgryte',
+	'rules': {
+		'semi': [ 2, 'never' ]
+	}
+}
+```
+
+
+### Module
+
+To use the configuration as a Node module,
+
 ``` javascript
 var config = require( 'eslint-config-kgryte' );
 ```
 
 #### config
 
-[ESLint](http://eslint.org/) config.
+[ESLint](http://eslint.org/) shareable [config](http://eslint.org/docs/developer-guide/shareable-configs).
 
 ``` javascript
 console.log( config );
 /*
-
+	{
+		'env': {...},
+		'rules': {...},
+		'ecmaFeatures': {...}
+	}
 */
 ```
 
@@ -33,7 +63,15 @@ console.log( config );
 ## Examples
 
 ``` javascript
-var config = require( 'eslint-config-kgryte' );
+var merge = require( 'utils-merge2' )(),
+	config = require( 'eslint-config-kgryte' );
+
+// Override configuration settings...
+merge( config.rules, {
+	'semi': [ 2, 'never' ]
+});
+
+console.log( config );
 ```
 
 To run the example code from the top-level application directory,
