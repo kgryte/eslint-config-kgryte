@@ -4,6 +4,8 @@
 // MODULES //
 
 var chai = require( 'chai' ),
+	fs = require( 'fs' ),
+	Engine = require( 'eslint' ).CLIEngine,
 	config = require( './../lib' );
 
 
@@ -31,6 +33,20 @@ describe( 'eslint-config-kgryte', function tests() {
 
 	it( 'should have a `ecmaFeatures` property', function test() {
 		assert.property( config, 'ecmaFeatures' );
+	});
+
+	it( 'should be a valid ESLint config', function test() {
+		var engine,
+			code,
+			out;
+
+		engine = new Engine({
+			'useEslintrc': false,
+			'baseConfig': config
+		});
+
+		out = engine.executeOnText( fs.readFileSync( __filename ) );
+		assert.strictEqual( out.errorCount, 0 );
 	});
 
 });
