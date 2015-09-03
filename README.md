@@ -4,6 +4,8 @@ ESLint Config
 
 > [ESLint](http://eslint.org/) shareable [config](http://eslint.org/docs/developer-guide/shareable-configs).
 
+This [ESLint](http://eslint.org/) config follows the style guide documented [here](https://github.com/kgryte/javascript-style-guide).
+
 
 ## Installation
 
