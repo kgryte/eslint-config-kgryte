@@ -40,7 +40,7 @@ where `kgryte` is a shorthand for `eslint-config-kgryte`. To override configurat
 
 ### Module
 
-To use the configuration as a Node module,
+To use the configuration as a Node module (possibly even to create your own shareable [config](http://eslint.org/docs/developer-guide/shareable-configs)),
 
 ``` javascript
 var config = require( 'eslint-config-kgryte' );
